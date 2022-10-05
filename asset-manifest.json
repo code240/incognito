@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/incognito/static/js/main.cb95b291.js",
+    "index.html": "/incognito/index.html",
+    "main.cb95b291.js.map": "/incognito/static/js/main.cb95b291.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.cb95b291.js"
+  ]
+}
