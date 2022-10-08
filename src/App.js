@@ -15,7 +15,7 @@ export default function App() {
     <>
       <Router >
           <Switch>
-            <Route path="/" exact component={Download} />
+            <Route path="/" exact component={Message} />
             <Route path="/:user" exact component={Message} />
             <Route path="/:user/:question"  component={Message} />
           </Switch>
