@@ -1,0 +1,91 @@
+.mainbody2{
+    background:linear-gradient(rgba(255, 255, 255, 0.8),rgba(255, 255, 255, 0.8)),url("https://media.istockphoto.com/videos/colored-smoke-on-a-dark-background-blue-and-red-light-with-smoke-video-id1341408852?b=1&k=20&m=1341408852&s=640x640&h=C6ymXpr_Jn6-WqQmHHuS8z6TGBtkWDQ9x6tFs_hsBjs=");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.logodiv2{
+    height: 4rem;
+}
+.appname{
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 4rem;
+    font-weight: 400;
+    width: 30rem;
+    font-size: 2rem;
+    line-height: 3rem;
+}
+.clicks{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: #444;
+    margin-top: 5rem;
+}
+.download-button{
+    margin: 0 auto;
+    display: block;
+    margin-top: 2rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    border: 0;
+    background-color: #ff0033;
+    color: #fff;
+    border-radius: 1rem;
+    transition: 0.5s ease-in;
+    animation: animateHeart 1.2s infinite;
+
+}
+.download-button:hover{
+    background-color: #a70021;
+}
+
+
+@keyframes animateHeart {
+    0% {
+      transform:  scale(0.8);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.8);
+    }
+  }
+
+.success{
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    animation: animateHeart 1.2s infinite;
+    color: green;
+}
+.btn-other{
+    margin: 0 auto;
+    display: block;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+
+
+@media screen and (max-width:600px) {
+    .appname{
+        width: 25rem;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .appname{
+        width: 90%;
+        font-size: 1.7rem;
+        line-height: 2.4rem;
+    }
+    .download-button{
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}
