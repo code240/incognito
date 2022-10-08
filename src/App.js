@@ -13,7 +13,7 @@ import Message from './Pages/Message';
 export default function App() {
   return (
     <>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
           <Switch>
             <Route path="/" exact component={Download} />
             <Route path="/:user" exact component={Message} />
@@ -25,6 +25,6 @@ export default function App() {
 }
 
 
-
+// basename={process.env.PUBLIC_URL}
 // "react-router-dom": "^6.4.1",
 
