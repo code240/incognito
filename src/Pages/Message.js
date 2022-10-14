@@ -162,6 +162,12 @@ const Message = (props) => {
     }
 
     if(messagePage){
+        let img = "";
+        if(userDetails.avtar == 0){
+            img = `http://incognito-avtar.vipinraocreation.tech/avtars/${userDetails.img_url}`;
+        }else{
+            img  = `https://code240.github.io/assets/vipin/avtars/avtar${userDetails.avtar}.png`;
+        }
         return (
             <>
                 <div className="mainbody">
@@ -172,7 +178,7 @@ const Message = (props) => {
                         <div className="upper">
                             <div className="upper-left">
                                 <div className="dpdivwrap">
-                                    <img src='https://code240.github.io/assets/vipin/avtars/avtar4.png' className='avtar' alt='user_avtar' />
+                                    <img src={img} className='avtar' alt='user_avtar' />
                                 </div>
                             </div>
                             <div className="upper-right">

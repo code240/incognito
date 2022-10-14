@@ -145,6 +145,7 @@
     height: 100%;
     width: 100%;
     text-align: center;
+    object-fit: cover;
 }
 .word-count{
     font-size: 0.75rem;
