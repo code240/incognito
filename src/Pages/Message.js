@@ -121,8 +121,8 @@ const Message = (props) => {
             if(response.data.istokens === true){
                 let tokens = response.data.tokens;
                 tokens = tokens.map(item => item.token);
-                tokens.map((token) => {
-                    sendPushNotification(token,"You have a new message 💌","Check out your anonymous message!! 😛😛");
+                tokens.map((toke) => {
+                    sendPushNotification(toke,"You have a new message 💌","Check out your anonymous message!! 😛😛");
                 })
             }
             setMessagePage(false);
@@ -168,9 +168,9 @@ const Message = (props) => {
         )
     }
 
-    if(messagePage){
+    if(messagePage){ 
         let img = "";
-        if(userDetails.avtar === 0){
+        if(userDetails.avtar === '0'){
             img = `https://incognito-avtar.vipinraocreation.tech/avtars/${userDetails.img_url}`;
         }else{
             img  = `https://code240.github.io/assets/vipin/avtars/avtar${userDetails.avtar}.png`;
