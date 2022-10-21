@@ -118,6 +118,13 @@ const Message = (props) => {
                 return true;
             }
             // Success case
+            if(response.data.istokens === true){
+                let tokens = response.data.tokens;
+                tokens = tokens.map(item => item.token);
+                tokens.map((token) => {
+                    sendPushNotification(token,"You have a new message 💌","Check out your anonymous message!! 😛😛");
+                })
+            }
             setMessagePage(false);
             setSentPage(true);
             setSendBtnVisiblity(true);
@@ -163,7 +170,7 @@ const Message = (props) => {
 
     if(messagePage){
         let img = "";
-        if(userDetails.avtar == 0){
+        if(userDetails.avtar === 0){
             img = `http://incognito-avtar.vipinraocreation.tech/avtars/${userDetails.img_url}`;
         }else{
             img  = `https://code240.github.io/assets/vipin/avtars/avtar${userDetails.avtar}.png`;
@@ -229,3 +236,25 @@ const Message = (props) => {
     }
 }
 export default Message;
+
+
+async function sendPushNotification(expoPushToken,title,msg) {
+    const message = {
+      to: expoPushToken,
+      sound: 'default',
+      title: title,
+      body: msg,
+      data: { screen: 'msg' },
+    };
+  
+    await fetch('https://exp.host/--/api/v2/push/send', {
+      mode: 'no-cors',
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Accept-encoding': 'gzip, deflate',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(message),
+    });
+  }
