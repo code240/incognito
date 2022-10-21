@@ -171,7 +171,7 @@ const Message = (props) => {
     if(messagePage){
         let img = "";
         if(userDetails.avtar === 0){
-            img = `http://incognito-avtar.vipinraocreation.tech/avtars/${userDetails.img_url}`;
+            img = `https://incognito-avtar.vipinraocreation.tech/avtars/${userDetails.img_url}`;
         }else{
             img  = `https://code240.github.io/assets/vipin/avtars/avtar${userDetails.avtar}.png`;
         }
