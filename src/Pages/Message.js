@@ -159,7 +159,7 @@ const Message = (props) => {
 
     if(user===null){
         return(<>
-            <Download />
+            <Download applink={applink} />
         </>)
     }
 
@@ -171,12 +171,12 @@ const Message = (props) => {
 
     if(downloadPage){
         return (
-            <Download />
+            <Download applink={applink} />
         )
     }
     if(sentPage){
         return (
-            <Sent new={sendAnother} />
+            <Sent new={sendAnother} applink={applink} />
         )
     }
 

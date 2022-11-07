@@ -1,10 +1,10 @@
 import React,{useState,useEffect} from 'react';
 import './Css/Message.css';
 import './Css/Download.css';
-import axios from 'axios';
 import { VersionControlApi } from '../api/Api';
+import axios from 'axios';
 
-const Download = () => {
+const Download = (props) => {
     const [applink, setApplink] = useState("");
 
     useEffect(() => {
