@@ -1,6 +1,9 @@
 .cb{
     clear: both;
 }
+a{
+    text-decoration: none;
+}
 .mainbody{
     /* background: linear-gradient(45deg, #ed1485,#fe8814);  */
     /* background: blue; */

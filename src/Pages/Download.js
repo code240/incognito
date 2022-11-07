@@ -1,9 +1,26 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import './Css/Message.css';
 import './Css/Download.css';
+import axios from 'axios';
+import { VersionControlApi } from '../api/Api';
 
 const Download = () => {
+    const [applink, setApplink] = useState("");
 
+    useEffect(() => {
+        axios.get(`${VersionControlApi}/api/updateAppStatus`).then((resp) => {
+            let y = resp.data;
+            setApplink(y.appLink);
+        }).catch(() => {
+            
+        })
+    },[])
+    
+    const rand = (min, max) => { // min and max included 
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+    
+    
     return (
         <>
             <div className="mainbody mainbody2">     
@@ -14,8 +31,10 @@ const Download = () => {
                 <h1 className='appname'>
                     Incognito - anonymous messaging and chatting 💌🔒
                 </h1>
-                <h6 className="clicks">16+ clicks in last hour</h6>
-                <button className='download-button'>Download</button>
+                <h6 className="clicks">{rand(3,11)}+ clicks in last hour</h6>
+                <a href={applink} target="_blank" rel="noopener noreferrer">
+                    <button className='download-button'>Download</button>   
+                </a>
             </div>
         </>
     )

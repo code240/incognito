@@ -4,7 +4,7 @@ import "./Css/Message.css";
 import Download from './Download';
 import Loading from './Loading';
 import Sent from './Sent';
-import { api } from '../api/Api';
+import { api,VersionControlApi } from '../api/Api';
 import axios from 'axios';
 import Questions from './../StaticData/Questions';
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
@@ -24,6 +24,7 @@ const Message = (props) => {
     const [questionText,setQuestionText] = useState("")
     const [questionNumber,setQuestionNumber] = useState(0);
     const [receiver,setReceiver] = useState("");
+    const [applink, setApplink] = useState("");
 
     // const [searchParams] = useSearchParams();
     // let q = searchParams.get("user");
@@ -78,12 +79,21 @@ const Message = (props) => {
                 }
                 setReceiver(response.data.result.inc_id)
                 // console.log(response.data.result);
+                axios.get(`${VersionControlApi}/api/updateAppStatus`).then((resp) => {
+                    let y = resp.data;
+                    setApplink(y.appLink);
+                }).catch(() => {
+                    
+                })
             }).catch(() => {
                 setLoadingPage(false);
                 setDownloadPage(true);
                 return true;
             })
         }
+
+
+        
     },[user])
 
     
@@ -223,9 +233,11 @@ const Message = (props) => {
                         downloadOption ? (
                             <div className="bottom">
                                 <h1 className="text1">👇 incognito!! Download the app now 👇</h1>
-                                <div className='urturnBtn'>
-                                    Create your own link and get messages 
-                                </div>
+                                <a href={applink} target="_blank" rel="noopener noreferrer">
+                                    <div className='urturnBtn'>
+                                        Create your own link and get messages 
+                                    </div>
+                                </a>
                             </div>
                         )  : null
                     }

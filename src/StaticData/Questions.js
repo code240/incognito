@@ -29,15 +29,15 @@ const Questions = [
     },
     {
         id : 8,
-        question : "You can share your problems with me!",
+        question : "You can share your problems with me, anonymously",
     },
     {
         id : 9,
-        question : "Send me anonymous messages9",
+        question : "Ask me anything, anonymously",
     },
     {
         id : 10,
-        question : "Send me anonymous messages10",
+        question : "How was your day? anonymous!",
     }
 ]
 
