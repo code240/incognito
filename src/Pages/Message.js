@@ -7,6 +7,8 @@ import Sent from './Sent';
 import { api } from '../api/Api';
 import axios from 'axios';
 import Questions from './../StaticData/Questions';
+import SendRoundedIcon from '@mui/icons-material/SendRounded';
+
 
 const Message = (props) => {
     const [msg,setMsg] = useState("");
@@ -204,9 +206,7 @@ const Message = (props) => {
                             {
                                 sendBtnVisiblity ? (
                                     <button className="send-btn" onClick={send}>
-                                        <span className="material-symbols-rounded">
-                                            send
-                                        </span>
+                                        <SendRoundedIcon/>
                                     </button>
                                 ) : (
                                     <button className='send-btn send-loading'><div className="loading"></div></button>
